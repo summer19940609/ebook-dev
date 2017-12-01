@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #webview {
+        position: absolute;
+        width: 100%;
+        height: 100%
+    }
+
+    .downloadBar {
+        width: 100%;
+    }
+
+    .downloadIcon {
+        width: 15px;
+        height: 15px;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform: rotateZ(45deg);
+        border-top: 5px rgb(228, 69, 252) solid;
+        border-left: 5px rgb(228, 69, 252) solid;
+        opacity: .5;
+        cursor: pointer;
+        border-radius: 0;
+    }
+
+    .downloadItem {}
+
+    #toolBarBtn {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 7.5vw;
+    }
+
+    #fullscreen,
+    #minimize,
+    #closeApp {
+        width: 2.5vw;
+        height: 1.67vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #fullscreen:hover {
+        background: #ccc;
+    }
+
+    #minimize:hover {
+        background: #ccc;
+    }
+
+    #closeApp:hover {
+        background: #e81123;
+    }
+
+    #closeApp:hover i {
+        background: url(img/close-white.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #min {
+        background: url(img/minimize.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 0.625vw;
+        height: 0.625vw;
+        display: block;
+    }
+
+    #full {
+        background: url(img/maximize.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 0.625vw;
+        height: 0.625vw;
+        display: block;
+    }
+
+    #close {
+        background: url(img/close.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 0.625vw;
+        height: 0.625vw;
+        display: block;
+    }
+</style>
+
+<body>
+    <!-- <webview id="webview" src="http://localhost:53480/index.html" allowpopups  preload="./apps/preload.js"></webview> -->
+    <webview id="webview" allowpopups preload="./apps/preload.js"></webview>
+    <!-- <webview id="webview" src="http://es.tes-sys.com/weare" allowpopups  preload="./apps/preload.js"></webview> -->
+    <!-- <i class="downloadIcon"></i>
+    <div class="downloadBar">
+        <div class="downloadItem">
+            <p></p>
+        </div>
+    </div> -->
+
+    <div id="toolBarBtn">
+        <!-- 最小化 -->
+        <div id="minimize">
+            <i id="min"></i>
+        </div>
+        <!-- 最大化 -->
+        <div id="fullscreen">
+            <i id="full"></i>
+        </div>
+        <!-- 关闭 -->
+        <div id="closeApp">
+            <i id="close"></i>
+        </div>
+    </div>
+</body>
+<script>
+    require('./apps/renderer.js');
+</script>
+
+</html>

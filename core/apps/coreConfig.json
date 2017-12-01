@@ -1,0 +1,7 @@
+{
+	"processSql": "CREATE TABLE teach_process (id VARCHAR(50),book_id VARCHAR(50),user_id VARCHAR(50),page_id VARCHAR(50),chapter_id VARCHAR(50),section_id VARCHAR(50),course_id VARCHAR(50),count INTEGER(2),pos_x INTEGER(10),pos_y INTEGER(10),create_time TEXT,update_time TEXT,PRIMARY KEY (id))",
+	"process_files_Sql": "CREATE TABLE process_files (id VARCHAR(50),file_id VARCHAR(50),process_id VARCHAR(50),detail_index INTEGER(2),file_name VARCHAR(255),ext_name VARCHAR(50),edit_name VARCHAR(255),convert_name VARCHAR(255),download_url TEXT,view_url TEXT,file_md5 VARCHAR(50),create_time TEXT,isDownload INTEGER(1) DEFAULT(0),PRIMARY KEY (id))",
+	"note_Sql": "CREATE TABLE note(note_id VARCHAR(50), user_id VARCHAR(50), book_id VARCHAR(50), page_id VARCHAR(50), chapter_id VARCHAR(50), section_id VARCHAR(50), course_id VARCHAR(50), select_text TEXT, position VARCHAR(100), note_type VARCHAR(100), note_text TEXT, add_time TEXT, update_time TEXT, PRIMARY KEY(note_id))",
+	"teach_process_insert": "INSERT INTO teach_process (id,book_id,user_id,page_id,chapter_id,section_id,course_id,count,pos_x,pos_y,create_time,update_time) VALUES",
+	"process_files_insert": "INSERT INTO process_files (id,file_id,process_id,detail_index,file_name,ext_name,convert_name,file_md5,edit_name,download_url,view_url,create_time,isDownload) VALUES"
+}
